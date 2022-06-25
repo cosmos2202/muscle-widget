@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ChartConfiguration } from './muscleman/models/chart-model';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'widget';
+
+  chartConfiguration: ChartConfiguration
+
+  constructor() {
+    this.chartConfiguration = new ChartConfiguration()
+  }
 }
