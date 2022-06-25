@@ -49,7 +49,7 @@ export class MuscleWidgetComponent implements OnInit {
     let a$ = this.muscleWidgetService.getCurrencyData()
     let b$ = this.muscleWidgetService.getChartData(this.chartConfig.days, this.chartConfig.points)
     let all$ = forkJoin([a$, b$])
-    timer(0, 60000).pipe(mergeMap(() => all$),
+    timer(0, this.chartConfig.refreshRateMs).pipe(mergeMap(() => all$),
     tap(chartModel => {
         const data = []
         for (const value of chartModel[1].data) {

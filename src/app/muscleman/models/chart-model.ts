@@ -79,6 +79,7 @@ export class ChartConfiguration
                 public xAxisText: string='Date',
                 public yAxisStyle: CSSObject={color: 'white', fontSize: '12px', fontWeight: '600'},
                 public yAxisText: string='Price',
-                public colors: Array<string>=new Array<string>('blueviolet'))
+                public colors: Array<string>=new Array<string>('blueviolet'),
+                public refreshRateMs: number=60000)
             {}
 }
