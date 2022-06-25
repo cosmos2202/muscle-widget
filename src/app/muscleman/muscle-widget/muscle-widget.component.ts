@@ -46,8 +46,8 @@ export class MuscleWidgetComponent implements OnInit {
     this.width1 = (window.innerWidth - this.chartConfig.primaryPercentageLabelXPosition)
     this.width2 = (window.innerWidth - this.chartConfig.secondaryPercentageLabelXPosition)
 
-    let a$ = this.muscleWidgetService.getCurrencyData()
-    let b$ = this.muscleWidgetService.getChartData(this.chartConfig.days, this.chartConfig.points)
+    let a$ = this.muscleWidgetService.getCurrencyData(this.chartConfig.coin)
+    let b$ = this.muscleWidgetService.getChartData(this.chartConfig.days, this.chartConfig.points, this.chartConfig.coin)
     let all$ = forkJoin([a$, b$])
     timer(0, this.chartConfig.refreshRateMs).pipe(mergeMap(() => all$),
     tap(chartModel => {

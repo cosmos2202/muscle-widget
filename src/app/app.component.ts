@@ -13,5 +13,8 @@ export class AppComponent {
 
   constructor() {
     this.chartConfiguration = new ChartConfiguration()
+    this.chartConfiguration.coin = 'ZANO'
+    this.chartConfiguration.coinName = 'Progpow'
+    this.chartConfiguration.dataSeriesName = 'Zano Price'
   }
 }
