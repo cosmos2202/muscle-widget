@@ -46,6 +46,13 @@ export class PeriodData
     year: number
 }
 
+export class SelectValue {
+    constructor(public displayName: string,
+                public coinName: string,
+                public dataSeriesName: string,
+                public imageLocation: string){}
+}
+
 export class ChartConfiguration
 {
     constructor(public points: number=24, 
